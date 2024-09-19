@@ -24,7 +24,7 @@
         {% for task in tasks %}
         <li class="task-item text-primary">
             <span><a href="task/{{task.id}}">{{task.title}}</a></span>
-            <span><a href="deleteTask/{{task.id}}"><i class="fas fa-trash"></i></a></span>
+            <span><a href="deleteTask/{{task.id}}" class="delete-btn"><i class="fas fa-trash"></i></a></span>
             <span><a href="editTask/{{task.id}}"><i class="fas fa-edit"></i></a></span>
         </li>
         {% endfor %}
@@ -32,15 +32,15 @@
     <div class="pagination">
         <span class="step-links">
             {% if tasks.has_previous %}
-                <a href="?page={{ page.previous_page_number }}"><i class="fa fa-arrow-left" aria-hidden="true"></class=>"></i></a>
+                <a href="?page={{ tasks.previous_page_number }}"><i class="fas fa-arrow-left" aria-hidden="true"></i></a>
             {% endif %}
             
             <span class="current">
-                {{ tasks.number }} de {{ tasks.pagination.num_pages}}
+                {{ tasks.number }} de {{ tasks.paginator.num_pages}}
             </span>
 
             {% if tasks.has_next %}
-                <a href="?page={{ page.next_page_number }}"><i class="fa fa-arrow-left" aria-hidden="true"></class=>"></i></a>
+                <a href="?page={{ tasks.next_page_number }}"><i class="fas fa-arrow-right" aria-hidden="true"></i></a>
             {% endif %}
         </span>
 
