@@ -66,7 +66,7 @@ def editTask(request, id):
             return render(request, 'tasks/editTask.html', {'form': form, 'task': task})
     else:
         return render(request, 'tasks/editTask.html', {'form': form, 'task': task})
-    
+
 
 def deleteTask(request, id):
     task = get_object_or_404(Task, pk=id)
